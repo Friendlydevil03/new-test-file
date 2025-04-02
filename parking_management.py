@@ -21,11 +21,11 @@ from detection.parking_detection import process_parking_frame, check_parking_spa
 from detection.vehicle_counting import detect_vehicles_traditional, detect_vehicles_ml, get_centroid
 
 # Import UI modules
-from ui.detection_tab import setup_detection_tab
-from ui.setup_tab import setup_setup_tab
-from ui.log_tab import setup_log_tab
-from ui.stats_tab import setup_stats_tab
-from ui.reference_tab import setup_reference_tab
+from ui.detection_tab import DetectionTab
+from ui.setup_tab import SetupTab
+from ui.log_tab import LogTab
+from ui.stats_tab import StatsTab
+from ui.reference_tab import ReferenceTab
 
 
 class ParkingManagementSystem:
@@ -158,11 +158,11 @@ class ParkingManagementSystem:
         self.main_container.add(self.reference_tab, text="References")
 
         # Setup each tab
-        setup_detection_tab(self)
-        setup_setup_tab(self)
-        setup_log_tab(self)
-        setup_stats_tab(self)
-        setup_reference_tab(self)
+        self.detection_tab_controller = DetectionTab(self.detection_tab, self)
+        self.setup_tab.controller= SetupTab(self.setup_tab, self)
+        self.log_tab.controller = LogTab(self.log_tab, self)
+        self.stats_tab.controller = StatsTab(self.setup_tab, self)
+        self.reference_tab.controller = ReferenceTab(self.reference_tab, self)
 
     # The rest of the methods would be implemented here, but for clarity
     # only a subset are shown in this example. Each method would be moved
