@@ -3,7 +3,7 @@ Setup Tab for Smart Parking Management System
 Allows users to define and configure parking spaces
 """
 
-from tkinter import Canvas, Label, Button, Frame, StringVar
+from tkinter import Canvas, Label, Button, Frame, StringVar, OptionMenu
 from tkinter import TOP, LEFT, RIGHT, X, Y, BOTH
 
 
